@@ -1,19 +1,167 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <style>
-        body { font-family: sans-serif; background: #2c2f33; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .container { text-align: center; background: #23272a; padding: 40px; border-radius: 10px; }
-        .btn { background: #5865F2; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 18px; display: inline-block; margin-top: 20px;}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Kura Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#ffffff;
+    --hair:#1a1a1a;
+    --muted:#8a8a8a;
+    --accent:#7c8f6e; /* quiet sage, echoes the leaf mark */
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    display:flex;
+    flex-direction:column;
+  }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 48px;
+    border-bottom:1px solid var(--hair);
+  }
+  .logo{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:26px;
+    letter-spacing:0.08em;
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    margin-left:28px;
+    font-size:15px;
+    letter-spacing:0.02em;
+  }
+  nav a:hover{ text-decoration:underline; text-underline-offset:4px; }
+
+  main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px;
+  }
+
+  .card{
+    text-align:center;
+    max-width:460px;
+    width:100%;
+  }
+
+  .marks{
+    font-size:20px;
+    letter-spacing:14px;
+    margin-bottom:18px;
+    color:var(--ink);
+  }
+
+  h1{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:56px;
+    margin:0 0 10px;
+    letter-spacing:0.02em;
+  }
+
+  .eyebrow{
+    font-style:italic;
+    font-size:14px;
+    letter-spacing:0.3em;
+    color:var(--muted);
+    margin:0 0 28px;
+  }
+
+  .rule{
+    border:none;
+    border-top:2px solid var(--hair);
+    width:100%;
+    margin:0 0 34px;
+  }
+
+  .lede{
+    font-style:italic;
+    font-size:19px;
+    margin:0 0 32px;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    max-width:320px;
+    padding:16px 28px;
+    border:1px solid var(--hair);
+    background:transparent;
+    color:var(--ink);
+    font-family:'EB Garamond', serif;
+    font-style:italic;
+    font-size:17px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    transition:background 0.2s ease, color 0.2s ease;
+  }
+  .btn:hover{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  footer{
+    text-align:center;
+    padding:22px;
+    font-size:12px;
+    letter-spacing:0.15em;
+    color:var(--muted);
+    border-top:1px solid var(--hair);
+  }
+
+  @media (max-width:480px){
+    header{padding:20px 24px;}
+    h1{font-size:42px;}
+    .logo{font-size:22px;}
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Kura Shop へようこそ</h1>
-        <p>購入機能を利用するには、Discord でログインしてください。</p>
-        <a href="/auth/login" class="btn">Discord でログイン</a>
+  <header>
+    <div class="logo">— Kura —</div>
+    <nav>
+      <a href="/">home</a>
+      <a href="/shop">shop</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="marks">✦ ✦ ✦</div>
+      <h1>Access.</h1>
+      <p class="eyebrow">— members only —</p>
+      <hr class="rule">
+      <p class="lede">購入機能を利用するには、Discord でログインしてください。</p>
+      <a href="/auth/login" class="btn">→ Discord でログイン</a>
     </div>
+  </main>
+
+  <footer>KURA SHOP</footer>
 </body>
 </html>
